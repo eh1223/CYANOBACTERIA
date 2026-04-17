@@ -1,0 +1,18 @@
+# April-17-notes
+
+ADD FASTQS.GZIP TO FASTQS AND POLY G TRIMMED
+
+gzip: data/fastqs/*R1_001.fastq.gz: No such file or directory
+gzip: data/poly-G-trimmed/data/fastqs/*R1_001.fastq.gz: No such file or directory
+
+GOD BLESS
+mv /home/users/eh1223/CYANOBACTERIA/data/fastqs/data/*gz /home/users/eh1223/CYANOBACTERIA/data/fastqs
+rm -r data/ Cyanobacteria/ (THESE NO LONGER EXIST YIPPEE)
+
+cp -r /home/users/eh1223/CYANOBACTERIA/data/poly-G-trimmed/*gz /home/users/eh1223/CYANOBACTERIA/data/poly-G-trimmed/data/
+
+what we did:
+1. moved fastq gzips into data/fastq folder
+2. created directories in poly-g-trimmed directories
+3. copied fastqs into fastq directory in poly g trimmed
+4. ALL OF THIS BULLSHIT TO RUN ONE (1) CODE: code/polyGfilter.sh ${polyg_len}
