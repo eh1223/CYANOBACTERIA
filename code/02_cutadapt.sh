@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### THIS IS WHERE PROJECTS BEGIN TO DIVERGE. The cutadapt parameters and primers will depend on the project. See qiime2_parameters.sh for cutadapt parameters and 01_trim.sh for polyG filter parameters.
-primer="RBCL"
+primer="16s_V4-V5"
 projname="DEP_${primer}"
 ## example: projname="Cyanobac_16s_V4-V5"
 
@@ -9,10 +9,10 @@ conda activate qiime2-amplicon-2026.1
 
 ### import fastqs. Add the demultiplexed sequences to the data/results directory. This will create a .qza file that can be used for cutadapt and qiime2 downstream analyses.
 qiime tools import \
-    --type "SampleData[PairedEndSequencesWithQuality]"  \
+    --type "SampleData[PairedEndSequencesWithQuality]" \
     --input-format CasavaOneEightSingleLanePerSampleDirFmt \
     --input-path data/poly-G-trimmed \
-    --output-path data/results/${projname}_demux 
+    --output-path data/results/${projname}_demux.qza 
 
 
 ## copied from qiime2_parameters.sh
@@ -24,15 +24,15 @@ cutadapt_config="--p-front-f $fw --p-front-r $rv"
 qiime cutadapt trim-paired \
     --i-demultiplexed-sequences data/results/${projname}_demux.qza \
     --p-error-rate 0.12 \
-    --o-trimmed-sequences results/${projname}_demux_cutadapt.qza \
+    --o-trimmed-sequences data/results/${projname}_demux_cutadapt.qza \
     --p-cores 4 \
-    "${cutadapt_config}" \
+    $cutadapt_config \
     --p-discard-untrimmed \
     --p-match-adapter-wildcards \
     --verbose 
 
 qiime demux summarize \
-    --i-data results/${projname}_demux_cutadapt.qza \
-    --o-visualization results/${projname}_demux_cutadapt.qzv
+    --i-data data/results/${projname}_demux_cutadapt.qza \
+    --o-visualization data/results/${projname}_demux_cutadapt.qzv
 
 

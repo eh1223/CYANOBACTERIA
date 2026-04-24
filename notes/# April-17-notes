@@ -16,3 +16,8 @@ what we did:
 2. created directories in poly-g-trimmed directories
 3. copied fastqs into fastq directory in poly g trimmed
 4. ALL OF THIS BULLSHIT TO RUN ONE (1) CODE: code/polyGfilter.sh ${polyg_len}
+
+April 24 notes
+
+updated git ignore file
+finished cut adapt and qiime
