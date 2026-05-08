@@ -6,3 +6,5 @@ refdb/*
 
 mv data/fastqs/fastqs/*gz data/fastqs/
 rm -r data/fastqs/fastqs/
+
+refdbs/silva_99_otus_16S_nb-classifier.qza
