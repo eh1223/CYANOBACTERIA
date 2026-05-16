@@ -1,7 +1,7 @@
 data/fastqs/*
 data/results/*
 data/poly-G-trimmed/*
-refdb/*
+refdbs/*
 
 
 mv data/fastqs/fastqs/*gz data/fastqs/
