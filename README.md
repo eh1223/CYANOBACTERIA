@@ -9,7 +9,7 @@ The sequences were downloaded from the reference above in fgastqz format. GitHub
 
 We ran into issues sharing the repository, so the majority of code was run by the repository owner. There was confusion over the denoise and classify steps, but once these were resolved the analysis ran smoothly. Assistance from peers was used during steps 2, 4, and 5. 
 
-#Plots
+# Plots
 bray_curtis_emperor.qzv  
 DEP_16s_V4-V5_taxa_barplot.qzv  
 jaccard_emperor.qzv  
